@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         self.title = "Main"
         self.view.backgroundColor = .white
-        
+        testUI()
         func createBtn(_ title: String, _ action: Selector) -> UIButton {
             let btn = UIButton(type: .custom)
             btn.setTitle(title, for: .normal)
@@ -345,4 +345,24 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         ac.previewAssets(sender: self, assets: self.selectedAssets, index: indexPath.row, isOriginal: self.isOriginal, showBottomViewAndSelectBtn: true)
     }
     
+    func testUI() {
+        let config = ZLPhotoConfiguration.default()
+        //test
+//        config.style = .externalAlbumList
+        config.showPreviewButtonInAlbum = false
+        config.themeColorDeploy.bottomToolViewBgColor = .white
+        config.themeColorDeploy.navBarColor = .white
+        config.themeColorDeploy.thumbnailBgColor = .white
+        config.themeColorDeploy.previewBgColor = .red
+        config.themeColorDeploy.navTitleColor = .black
+        config.themeColorDeploy.navEmbedTitleViewBgColor = .white
+        config.themeColorDeploy.backBtnTintColor = .black
+        
+        config.themeColorDeploy.bottomToolViewBtnNormalTitleColor = .white
+        config.themeColorDeploy.bottomToolViewBtnDisableTitleColor = UIColor.init(red: 102 / 255, green: 102 / 255, blue: 102 / 255, alpha: 1)
+        config.themeColorDeploy.bottomToolViewBtnNormalBgColor =  UIColor.init(red: 79 / 255, green: 138 / 255, blue: 255 / 255, alpha: 1)
+        config.themeColorDeploy.bottomToolViewBtnDisableBgColor = UIColor.init(red: 230 / 255, green: 233 / 255, blue: 239 / 255, alpha: 1)
+        config.bottomToolViewBlurEffect = UIBlurEffect(style: .light)
+        config.navViewBlurEffect = UIBlurEffect(style: .light)
+    }
 }

@@ -458,6 +458,17 @@ extension UIImage {
         return UIImage(cgImage: cgImage)
     }
     
+    func tint(color: UIColor?, blendMode: CGBlendMode = .destinationIn) -> UIImage? {
+        guard let color = color else { return self}
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        color.setFill()
+        UIRectFill(rect)
+        draw(in: rect, blendMode: blendMode, alpha: 1.0)
+        let tintImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintImg
+    }
 }
 
 

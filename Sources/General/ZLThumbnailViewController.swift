@@ -278,7 +278,8 @@ class ZLThumbnailViewController: UIViewController {
             
             let originalTitle = localLanguageTextValue(.originalPhoto)
             let originBtnW = originalTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width + 30
-            self.originalBtn.frame = CGRect(x: (self.bottomView.bounds.width-originBtnW)/2-5, y: btnY, width: originBtnW, height: btnH)
+            let originalBtnX = previewBtn.isHidden ? 20 : (self.bottomView.bounds.width-originBtnW)/2-5
+            self.originalBtn.frame = CGRect(x: originalBtnX, y: btnY, width: originBtnW, height: btnH)
             
             self.refreshDoneBtnFrame()
         }
@@ -337,6 +338,8 @@ class ZLThumbnailViewController: UIViewController {
         self.originalBtn = createBtn(localLanguageTextValue(.originalPhoto), #selector(originalPhotoClick))
         self.originalBtn.setImage(getImage("zl_btn_original_circle"), for: .normal)
         self.originalBtn.setImage(getImage("zl_btn_original_selected"), for: .selected)
+        self.originalBtn.setTitleColor(.originalBtnColor, for: .normal)
+        self.originalBtn.setTitleColor(.originalBtnColor, for: .disabled)
         self.originalBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         self.originalBtn.isHidden = !(ZLPhotoConfiguration.default().allowSelectOriginal && ZLPhotoConfiguration.default().allowSelectImage)
         self.originalBtn.isSelected = (self.navigationController as! ZLImageNavController).isSelectedOriginal
@@ -1257,7 +1260,7 @@ class ZLEmbedAlbumListNavView: UIView {
         }
         
         self.refreshTitleViewFrame()
-        let cancelBtnW = localLanguageTextValue(.cancel).boundingRect(font: ZLLayout.navTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 44)).width
+        let cancelBtnW: CGFloat = 44
         self.cancelBtn.frame = CGRect(x: insets.left+20, y: insets.top, width: cancelBtnW, height: 44)
     }
     
@@ -1306,10 +1309,10 @@ class ZLEmbedAlbumListNavView: UIView {
         self.arrow.contentMode = .scaleAspectFill
         self.titleBgControl.addSubview(self.arrow)
         
+        
         self.cancelBtn = UIButton(type: .custom)
-        self.cancelBtn.titleLabel?.font = ZLLayout.navTitleFont
-        self.cancelBtn.setTitle(localLanguageTextValue(.cancel), for: .normal)
-        self.cancelBtn.setTitleColor(.navTitleColor, for: .normal)
+        self.cancelBtn.setImage(getImage("zl_navBack")?.tint(color: .backBtnTintColor) , for: .normal)
+        self.cancelBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
         self.cancelBtn.addTarget(self, action: #selector(cancelBtnClick), for: .touchUpInside)
         self.addSubview(self.cancelBtn)
     }

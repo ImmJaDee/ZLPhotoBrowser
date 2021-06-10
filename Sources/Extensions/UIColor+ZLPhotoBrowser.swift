@@ -148,4 +148,16 @@ extension UIColor {
         ZLPhotoConfiguration.default().themeColorDeploy.cameraCellBgColor
     }
     
+    //原图按钮颜色
+    class var originalBtnColor: UIColor {
+        ZLPhotoConfiguration.default().themeColorDeploy.originalBtnColor
+    }
+    
+    class var originalCirleSelectedTintColor: UIColor? {
+        ZLPhotoConfiguration.default().themeColorDeploy.originalCirleSelectedTintColor
+    }
+    
+    class var backBtnTintColor: UIColor? {
+        ZLPhotoConfiguration.default().themeColorDeploy.backBtnTintColor
+    }
 }

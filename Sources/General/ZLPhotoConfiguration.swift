@@ -670,6 +670,10 @@ public class ZLPhotoThemeColorDeploy: NSObject {
     /// The background color of camera cell inside album.
     @objc public var cameraCellBgColor = UIColor(white: 0.3, alpha: 1)
     
+    // 自定义
+    @objc public var originalBtnColor = zlRGB(102, 102, 102)
+    @objc public var originalCirleSelectedTintColor: UIColor?
+    @objc public var backBtnTintColor: UIColor?
 }
 
 
