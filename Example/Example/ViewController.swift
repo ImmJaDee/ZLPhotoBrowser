@@ -357,9 +357,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         config.themeColorDeploy.navTitleColor = .black
         config.themeColorDeploy.navEmbedTitleViewBgColor = .white
         config.themeColorDeploy.backBtnTintColor = .black
+        config.themeColorDeploy.indexLabelBgColor = .blue
+        config.themeColorDeploy.originalCirleSelectedTintColor = .red
         
-        config.themeColorDeploy.bottomToolViewBtnNormalTitleColor = .white
-        config.themeColorDeploy.bottomToolViewBtnDisableTitleColor = UIColor.init(red: 102 / 255, green: 102 / 255, blue: 102 / 255, alpha: 1)
+        config.themeColorDeploy.bottomToolViewBtnNormalTitleColor = UIColor.init(red: 102 / 255, green: 102 / 255, blue: 102 / 255, alpha: 1)
+//        config.themeColorDeploy.bottomToolViewBtnDisableTitleColor = UIColor.init(red: 102 / 255, green: 102 / 255, blue: 102 / 255, alpha: 1)
         config.themeColorDeploy.bottomToolViewBtnNormalBgColor =  UIColor.init(red: 79 / 255, green: 138 / 255, blue: 255 / 255, alpha: 1)
         config.themeColorDeploy.bottomToolViewBtnDisableBgColor = UIColor.init(red: 230 / 255, green: 233 / 255, blue: 239 / 255, alpha: 1)
         config.bottomToolViewBlurEffect = UIBlurEffect(style: .light)

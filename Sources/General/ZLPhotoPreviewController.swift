@@ -302,6 +302,8 @@ class ZLPhotoPreviewController: UIViewController {
         self.bottomView.addSubview(self.editBtn)
         
         self.originalBtn = createBtn(localLanguageTextValue(.originalPhoto), #selector(originalPhotoClick))
+        self.originalBtn.setTitleColor(.originalBtnColor, for: .normal)
+        self.originalBtn.setTitleColor(.originalBtnColor, for: .disabled)
         self.originalBtn.setImage(getImage("zl_btn_original_circle"), for: .normal)
         self.originalBtn.setImage(getImage("zl_btn_original_selected"), for: .selected)
         self.originalBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
