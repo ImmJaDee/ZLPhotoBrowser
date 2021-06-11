@@ -671,7 +671,8 @@ public class ZLPhotoThemeColorDeploy: NSObject {
     @objc public var cameraCellBgColor = UIColor(white: 0.3, alpha: 1)
     
     // 自定义
-    @objc public var originalBtnColor = zlRGB(102, 102, 102)
+    @objc public var doneBtnDisableColor = zlRGB(102, 102, 102)
+    @objc public var doneBtnColor = zlRGB(255, 255, 255)
     @objc public var originalCirleSelectedTintColor: UIColor?
     @objc public var backBtnTintColor: UIColor?
 }

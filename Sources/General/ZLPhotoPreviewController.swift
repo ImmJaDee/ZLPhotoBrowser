@@ -226,14 +226,14 @@ class ZLPhotoPreviewController: UIViewController {
         }
         
         self.backBtn = UIButton(type: .custom)
-        self.backBtn.setImage(getImage("zl_navBack"), for: .normal)
+        self.backBtn.setImage(getImage("zl_navBack")?.tint(color: .backBtnTintColor), for: .normal)
         self.backBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
         self.backBtn.addTarget(self, action: #selector(backBtnClick), for: .touchUpInside)
         self.navView.addSubview(self.backBtn)
         
         self.selectBtn = UIButton(type: .custom)
-        self.selectBtn.setImage(getImage("zl_btn_circle"), for: .normal)
-        self.selectBtn.setImage(getImage("zl_btn_selected"), for: .selected)
+        self.selectBtn.setImage(getImage("zl_btn_original_circle"), for: .normal)
+        self.selectBtn.setImage(getImage("zl_btn_original_selected"), for: .selected)
         self.selectBtn.zl_enlargeValidTouchArea(inset: 10)
         self.selectBtn.addTarget(self, action: #selector(selectBtnClick), for: .touchUpInside)
         self.navView.addSubview(self.selectBtn)
@@ -302,16 +302,16 @@ class ZLPhotoPreviewController: UIViewController {
         self.bottomView.addSubview(self.editBtn)
         
         self.originalBtn = createBtn(localLanguageTextValue(.originalPhoto), #selector(originalPhotoClick))
-        self.originalBtn.setTitleColor(.originalBtnColor, for: .normal)
-        self.originalBtn.setTitleColor(.originalBtnColor, for: .disabled)
         self.originalBtn.setImage(getImage("zl_btn_original_circle"), for: .normal)
-        self.originalBtn.setImage(getImage("zl_btn_original_selected"), for: .selected)
+        self.originalBtn.setImage(getImage("zl_btn_original_selected")?.tint(color: .originalCirleSelectedTintColor), for: .selected)
         self.originalBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         self.originalBtn.isHidden = !(config.allowSelectOriginal && config.allowSelectImage)
         self.originalBtn.isSelected = (self.navigationController as! ZLImageNavController).isSelectedOriginal
         self.bottomView.addSubview(self.originalBtn)
         
         self.doneBtn = createBtn(localLanguageTextValue(.done), #selector(doneBtnClick))
+        self.doneBtn.setTitleColor(.doneBtnColor, for: .normal)
+        self.doneBtn.setTitleColor(.doneBtnDisableColor, for: .disabled)
         self.doneBtn.backgroundColor = .bottomToolViewBtnNormalBgColor
         self.doneBtn.layer.masksToBounds = true
         self.doneBtn.layer.cornerRadius = ZLLayout.bottomToolBtnCornerRadius

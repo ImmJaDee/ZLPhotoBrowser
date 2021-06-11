@@ -149,8 +149,11 @@ extension UIColor {
     }
     
     //原图按钮颜色
-    class var originalBtnColor: UIColor {
-        ZLPhotoConfiguration.default().themeColorDeploy.originalBtnColor
+    class var doneBtnDisableColor: UIColor {
+        ZLPhotoConfiguration.default().themeColorDeploy.doneBtnDisableColor
+    }
+    class var doneBtnColor: UIColor {
+        ZLPhotoConfiguration.default().themeColorDeploy.doneBtnColor
     }
     
     class var originalCirleSelectedTintColor: UIColor? {

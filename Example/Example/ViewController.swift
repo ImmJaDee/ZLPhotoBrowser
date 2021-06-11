@@ -355,7 +355,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         config.themeColorDeploy.thumbnailBgColor = .white
         config.themeColorDeploy.previewBgColor = .red
         config.themeColorDeploy.navTitleColor = .black
-        config.themeColorDeploy.navEmbedTitleViewBgColor = .white
+        config.themeColorDeploy.navEmbedTitleViewBgColor = .red
         config.themeColorDeploy.backBtnTintColor = .black
         config.themeColorDeploy.indexLabelBgColor = .blue
         config.themeColorDeploy.originalCirleSelectedTintColor = .red
