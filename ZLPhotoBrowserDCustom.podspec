@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZLPhotoBrowserDCustom"
-  spec.version      = "0.0.1"
+  spec.version      = "4.1.6.1"
   spec.summary      = "customization from ZLPhotoBrowser."
 
   spec.description  = <<-DESC
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
                    DESC
 
   spec.homepage     = "https://github.com/ImmJaDee/ZLPhotoBrowser"
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
   spec.author             = { "JaDee" => "324810875@qq.com" }
 
