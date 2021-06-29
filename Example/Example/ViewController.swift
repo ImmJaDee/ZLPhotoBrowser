@@ -349,6 +349,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         let config = ZLPhotoConfiguration.default()
         //test
 //        config.style = .externalAlbumList
+//        config.allowEditImage = false
+        config.maxSelectCount = 1
+        config.editImageClipRatios = [.wh1x1]
+        config.editImageTools = [.clip]
+        config.showClipDirectlyIfOnlyHasClipTool = true
         config.showPreviewButtonInAlbum = false
         config.themeColorDeploy.bottomToolViewBgColor = .white
         config.themeColorDeploy.navBarColor = .white

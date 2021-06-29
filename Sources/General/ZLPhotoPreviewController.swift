@@ -193,13 +193,15 @@ class ZLPhotoPreviewController: UIViewController {
         
         let btnY: CGFloat = showSelPhotoPreview ? ZLPhotoPreviewController.selPhotoPreviewH + ZLLayout.bottomToolBtnY : ZLLayout.bottomToolBtnY
         
-        let editTitle = localLanguageTextValue(.edit)
+//        let editTitle = localLanguageTextValue(.edit)
+        let editTitle = "裁剪"
         let editBtnW = editTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width
         self.editBtn.frame = CGRect(x: 15, y: btnY, width: editBtnW, height: btnH)
         
         let originalTitle = localLanguageTextValue(.originalPhoto)
         let w = originalTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width + 30
-        self.originalBtn.frame = CGRect(x: (self.bottomView.bounds.width-w)/2-5, y: btnY, width: w, height: btnH)
+        let originalBtnX = editBtn.isHidden ? 20 : (self.bottomView.bounds.width-w)/2-5
+        self.originalBtn.frame = CGRect(x: originalBtnX, y: btnY, width: w, height: btnH)
         
         let selCount = (self.navigationController as? ZLImageNavController)?.arrSelectedModels.count ?? 0
         var doneTitle = localLanguageTextValue(.done)
@@ -297,7 +299,8 @@ class ZLPhotoPreviewController: UIViewController {
             return btn
         }
         
-        self.editBtn = createBtn(localLanguageTextValue(.edit), #selector(editBtnClick))
+//        self.editBtn = createBtn(localLanguageTextValue(.edit), #selector(editBtnClick))
+        self.editBtn = createBtn("裁剪", #selector(editBtnClick))
         self.editBtn.isHidden = (!config.allowEditImage && !config.allowEditVideo)
         self.bottomView.addSubview(self.editBtn)
         

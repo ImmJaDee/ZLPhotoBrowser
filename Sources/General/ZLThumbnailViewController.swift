@@ -1031,9 +1031,13 @@ extension ZLThumbnailViewController: UICollectionViewDataSource, UICollectionVie
         if self.shouldDirectEdit(m) {
             return
         }
-        
-        let vc = ZLPhotoPreviewController(photos: self.arrDataSources, index: index)
-        self.show(vc, sender: nil)
+
+        if config.maxSelectCount == 1, config.allowEditImage == true {
+            showEditImageVC(model: m)
+        }else {
+            let vc = ZLPhotoPreviewController(photos: self.arrDataSources, index: index)
+            self.show(vc, sender: nil)
+        }
     }
     
     func shouldDirectEdit(_ model: ZLPhotoModel) -> Bool {
