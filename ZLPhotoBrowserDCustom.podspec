@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZLPhotoBrowserDCustom"
-  spec.version      = "4.1.7"
+  spec.version      = "4.1.8"
   spec.summary      = "customization from ZLPhotoBrowser."
 
   spec.description  = <<-DESC
