@@ -194,7 +194,7 @@ class ZLPhotoPreviewController: UIViewController {
         let btnY: CGFloat = showSelPhotoPreview ? ZLPhotoPreviewController.selPhotoPreviewH + ZLLayout.bottomToolBtnY : ZLLayout.bottomToolBtnY
         
 //        let editTitle = localLanguageTextValue(.edit)
-        let editTitle = "裁剪"
+        let editTitle = "编辑"
         let editBtnW = editTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width
         self.editBtn.frame = CGRect(x: 15, y: btnY, width: editBtnW, height: btnH)
         
@@ -300,7 +300,7 @@ class ZLPhotoPreviewController: UIViewController {
         }
         
 //        self.editBtn = createBtn(localLanguageTextValue(.edit), #selector(editBtnClick))
-        self.editBtn = createBtn("裁剪", #selector(editBtnClick))
+        self.editBtn = createBtn("编辑", #selector(editBtnClick))
         self.editBtn.isHidden = (!config.allowEditImage && !config.allowEditVideo)
         self.bottomView.addSubview(self.editBtn)
         
