@@ -31,7 +31,7 @@ import Accelerate
 // MARK: data 转 gif image
 extension UIImage {
     
-    class func zl_animateGifImage(data: Data) -> UIImage? {
+    public class func zl_animateGifImage(data: Data) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             return nil
         }
